@@ -801,10 +801,84 @@ a {
 
     .photo-card.large,
     .photo-card.tall {
-        grid-column: auto;
-        grid-row: auto;
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-section {
+        flex-direction: column-reverse;
+        justify-content: center;
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-content {
+        margin-top: 3rem;
+    }
+
+    .hero-visual {
+        height: 400px;
+        width: 100%;
+    }
+
+    .phone-mockup {
+        width: 220px;
+        height: 440px;
+    }
+
+    /* Mobile Menu */
+    .menu-toggle {
+        display: block;
+        z-index: 201;
+        /* High z-index to stay on top */
+        cursor: pointer;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        background: rgba(10, 10, 18, 0.98);
+        /* Less transparent */
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.3s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+        z-index: 200;
+        /* Ensure on top of everything else */
+        padding-top: 60px;
+        /* Space for top bar if needed */
+    }
+
+    .nav-links.active {
+        right: 0;
+        display: flex;
+        /* Ensure flex is active */
+    }
+
+    .nav-links li {
+        margin: 1.5rem 0;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
     }
 }
+
+
 
 .next-project-footer {
     padding: 6rem 0;
@@ -1085,9 +1159,7 @@ footer {
         height: 200px;
     }
 
-    .nav-links {
-        display: none;
-    }
+    /* .nav-links { display: none; }  <-- Removed to allow hamburger menu */
 
 
     /* Experience Page - List Layout (Brittany Chiang Style) */
@@ -1099,7 +1171,8 @@ footer {
     .experience-list {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 4rem;
+        /* Increased space between items */
         max-width: 1000px;
         /* Wider container */
         margin: 0 auto;
@@ -1110,14 +1183,19 @@ footer {
         grid-template-columns: 200px 1fr;
         /* Wider date column */
         gap: 2rem;
-        padding: 2rem;
-        border-radius: 8px;
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        padding: 2.5rem;
+        /* Increased padding */
+        border-radius: 12px;
+        /* More rounded */
+        background: rgba(255, 255, 255, 0.02);
+        /* Default background */
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        /* Default border */
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         cursor: pointer;
         text-align: left;
-        /* Enforce left align */
-        border: 1px solid transparent;
-        /* Prevent layout shift on hover if border added later */
+        margin-bottom: 1rem;
+        /* Space between cards */
     }
 
     .experience-item:hover {
@@ -1140,7 +1218,18 @@ footer {
     .exp-content {
         display: flex;
         flex-direction: column;
-        gap: 0.8rem;
+        gap: 1.5rem;
+        /* Increased gap between title, description, tags */
+    }
+
+    .exp-description ul {
+        margin-top: 0.5rem;
+    }
+
+    .exp-description li {
+        margin-bottom: 0.8rem;
+        /* Space between bullets */
+        padding-left: 0.5rem;
     }
 
     .exp-title {
@@ -1191,18 +1280,37 @@ footer {
     }
 
     .tech-tags span {
-        background: rgba(100, 255, 218, 0.1);
-        color: var(--accent);
-        padding: 0.4rem 0.8rem;
-        border-radius: 20px;
+        background: #13131f;
+        /* Contact card bg */
+        color: var(--text-secondary);
+        /* Softer text color */
+        padding: 0.6rem 1.2rem;
+        margin-right: 0;
+        border-radius: 8px;
+        /* scaled down from 12px */
         font-family: var(--font-mono);
-        font-size: 0.75rem;
-        font-weight: 400;
+        font-size: 0.8rem;
+        font-weight: 500;
         line-height: 1;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        /* Contact card border */
+        transition: transform 0.3s, border-color 0.3s;
+        /* Contact card transition */
+        letter-spacing: 0.02em;
     }
 
     .experience-item:hover .tech-tags span {
-        background: rgba(100, 255, 218, 0.15);
+        /* No change on parent hover to match contact card indipendent behavior */
+        background: #13131f;
+        border-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .tech-tags span:hover {
+        transform: translateY(-3px);
+        /* Scaled down from -5px */
+        border-color: var(--accent);
+        background: rgba(19, 19, 31, 0.8);
+        color: var(--text-primary);
     }
 
     /* Responsive Experience */
