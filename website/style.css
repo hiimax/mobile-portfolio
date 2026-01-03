@@ -1943,3 +1943,452 @@ footer {
         right: 20px;
     }
 }
+/* --- Testimonials "Trust Cluster" --- */
+.testimonials-section {
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Base Card Style */
+.testimonial-card {
+    background: #1c1c2e;
+    border-radius: 16px;
+    padding: 1.5rem;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+/* WhatsApp Style */
+.testimonial-card.whatsapp {
+    background: #0b141a;
+    border-left: 4px solid #25D366;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.whatsapp-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.8rem;
+}
+
+.whatsapp-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #25D366;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+}
+
+.whatsapp-meta h4 {
+    font-size: 0.95rem;
+    color: #E9EDEF;
+    margin: 0;
+}
+
+.whatsapp-meta span {
+    font-size: 0.75rem;
+    color: #8696a0;
+}
+
+.whatsapp-bubble {
+    background: #005c4b;
+    padding: 0.8rem 1rem;
+    border-radius: 0 12px 12px 12px;
+    color: #e9edef;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    position: relative;
+    display: inline-block;
+}
+
+.whatsapp-time {
+    display: block;
+    text-align: right;
+    font-size: 0.7rem;
+    color: #8696a0;
+    margin-top: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+}
+
+.whatsapp-time i {
+    color: #53bdeb;
+}
+
+/* LinkedIn Style */
+.testimonial-card.linkedin {
+    background: #fff;
+    color: #333;
+    border: none;
+}
+
+.linkedin-header {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.linkedin-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #0077b5;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.linkedin-info h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+}
+
+.linkedin-info p {
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 1.3;
+}
+
+.linkedin-content {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.linkedin-badge {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: #0077b5;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Upwork Style */
+.testimonial-card.upwork {
+    background: linear-gradient(135deg, #14a800 0%, #108a00 100%);
+    color: white;
+    border: none;
+}
+
+.upwork-stars {
+    color: #fff;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    gap: 2px;
+}
+
+.upwork-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.upwork-content {
+    font-size: 0.95rem;
+    opacity: 0.95;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.upwork-client {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+/* Email Style */
+.testimonial-card.email {
+    background: #ffffff;
+    color: #202124;
+    font-family: 'Roboto', sans-serif;
+    border-top: 4px solid #ea4335;
+}
+
+.email-header {
+    border-bottom: 1px solid #f1f3f4;
+    padding-bottom: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.email-subject {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.email-from {
+    font-size: 0.85rem;
+    color: #5f6368;
+}
+
+.email-content {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #202124;
+}
+
+.email-signoff {
+    margin-top: 1rem;
+    font-style: italic;
+    color: #5f6368;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Testimonials Page */
+.testimonials-page-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .testimonials-page-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Improvements */
+@media (max-width: 768px) {
+    .projects-grid, .testimonials-grid, .experience-list {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem; /* Reduce hero font size */
+    }
+    
+    .nav-links {
+        background: rgba(10, 10, 18, 0.98); 
+        padding-top: 80px; 
+    }
+    
+    /* Improve tap targets */
+    .nav-links a {
+        padding: 1rem;
+        display: block;
+    }
+}
+
+/* Command Palette (Cmd+K) */
+.cmd-palette-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    display: none; /* Hidden by default */
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 15vh;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.cmd-palette-overlay.visible {
+    display: flex;
+}
+
+.cmd-palette-modal {
+    width: 100%;
+    max-width: 600px;
+    background: #1a1a24;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    font-family: var(--font-sans);
+}
+
+.cmd-bar {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cmd-bar i {
+    color: var(--text-secondary);
+    margin-right: 1rem;
+    font-size: 1.1rem;
+}
+
+.cmd-input {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    width: 100%;
+    outline: none;
+    font-family: var(--font-sans);
+}
+
+.cmd-input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.5;
+}
+
+.cmd-results {
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.cmd-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+.cmd-item:hover, .cmd-item.active {
+    background: rgba(100, 255, 218, 0.1);
+    color: var(--text-primary);
+}
+
+.cmd-item.active {
+    border-left: 2px solid var(--accent);
+}
+
+.cmd-item-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cmd-icon {
+    width: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.cmd-shortcut {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+}
+
+.cmd-footer {
+    padding: 0.5rem 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+}
+
+.cmd-key {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+    margin-right: 0.3rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Uses Page Styles */
+.uses-category {
+    margin-bottom: 4rem;
+}
+
+.category-title {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+}
+
+.category-title i {
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+.uses-list {
+    list-style: none;
+    padding: 0;
+}
+
+.uses-list li {
+    margin-bottom: 1.5rem;
+}
+
+.item-name {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+}
+
+.item-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}

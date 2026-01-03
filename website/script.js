@@ -74,3 +74,148 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 /* Project Data removed in favor of static pages for reliability */
+
+/* Command Palette Implementation */
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Inject HTML
+    const cmdPaletteHTML = `
+        <div class="cmd-palette-overlay" id="cmdOverlay">
+            <div class="cmd-palette-modal">
+                <div class="cmd-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" class="cmd-input" id="cmdInput" placeholder="Type a command or search...">
+                </div>
+                <ul class="cmd-results" id="cmdResults">
+                    <!-- Results injected here -->
+                </ul>
+                <div class="cmd-footer">
+                    <span><span class="cmd-key">↑↓</span>to navigate</span>
+                    <span><span class="cmd-key">↵</span>to select</span>
+                    <span><span class="cmd-key">esc</span>to close</span>
+                </div>
+            </div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', cmdPaletteHTML);
+
+    // 2. Data
+    const pages = [
+        { title: 'Home', url: 'index.html', icon: 'fa-home', type: 'Page' },
+        { title: 'About', url: 'about.html', icon: 'fa-user', type: 'Page' },
+        { title: 'Experience', url: 'experience.html', icon: 'fa-briefcase', type: 'Page' },
+        { title: 'Projects', url: 'projects.html', icon: 'fa-code', type: 'Page' },
+        { title: 'Testimonials', url: 'testimonials.html', icon: 'fa-comment-alt', type: 'Page' },
+        { title: 'Contact', url: 'contact.html', icon: 'fa-envelope', type: 'Page' },
+        { title: 'Uses', url: 'uses.html', icon: 'fa-laptop-code', type: 'Page' },
+        { title: 'Resume', url: 'resume.pdf', icon: 'fa-file-pdf', type: 'Document' },
+        // Project Shortcuts
+        { title: 'Project: Civic24', url: 'project-civic24.html', icon: 'fa-mobile-alt', type: 'Project' },
+        { title: 'Project: FinTech Vault', url: 'project-fintech-vault.html', icon: 'fa-shield-alt', type: 'Project' },
+        { title: 'Project: HealthTrack', url: 'project-healthtrack.html', icon: 'fa-heartbeat', type: 'Project' },
+    ];
+
+    // 3. Logic
+    const overlay = document.getElementById('cmdOverlay');
+    const input = document.getElementById('cmdInput');
+    const resultsList = document.getElementById('cmdResults');
+    let isOpen = false;
+    let selectedIndex = 0;
+    let filteredItems = [];
+
+    // Toggle Palette
+    function togglePalette(show) {
+        isOpen = show;
+        if (show) {
+            overlay.classList.add('visible');
+            input.value = '';
+            input.focus();
+            filterItems('');
+        } else {
+            overlay.classList.remove('visible');
+        }
+    }
+
+    // Render List
+    function renderList() {
+        resultsList.innerHTML = '';
+        filteredItems.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.className = `cmd-item ${index === selectedIndex ? 'active' : ''}`;
+            li.innerHTML = `
+                <div class="cmd-item-left">
+                    <i class="fas ${item.icon} cmd-icon"></i>
+                    <span>${item.title}</span>
+                </div>
+                <span class="cmd-shortcut">${item.type}</span>
+            `;
+            li.addEventListener('click', () => {
+                window.location.href = item.url;
+                togglePalette(false);
+            });
+            resultsList.appendChild(li);
+        });
+
+        if (filteredItems.length === 0) {
+            resultsList.innerHTML = `<li class="cmd-item" style="justify-content:center; opacity:0.5;">No results found</li>`;
+        }
+    }
+
+    // Filter Items
+    function filterItems(query) {
+        const q = query.toLowerCase();
+        filteredItems = pages.filter(page =>
+            page.title.toLowerCase().includes(q)
+        );
+        selectedIndex = 0;
+        renderList();
+    }
+
+    // Keyboard Events
+    document.addEventListener('keydown', (e) => {
+        // Toggle Cmd+K / Ctrl+K
+        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+            e.preventDefault();
+            togglePalette(!isOpen);
+        }
+
+        if (!isOpen) return;
+
+        // Navigation
+        if (e.key === 'Escape') {
+            togglePalette(false);
+        } else if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            selectedIndex = (selectedIndex + 1) % filteredItems.length;
+            renderList();
+            scrollToSelected();
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            selectedIndex = (selectedIndex - 1 + filteredItems.length) % filteredItems.length;
+            renderList();
+            scrollToSelected();
+        } else if (e.key === 'Enter') {
+            if (filteredItems[selectedIndex]) {
+                window.location.href = filteredItems[selectedIndex].url;
+                togglePalette(false);
+            }
+        }
+    });
+
+    input.addEventListener('input', (e) => {
+        filterItems(e.target.value);
+    });
+
+    // Close on backdrop click
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            togglePalette(false);
+        }
+    });
+
+    function scrollToSelected() {
+        const activeItem = resultsList.children[selectedIndex];
+        if (activeItem) {
+            activeItem.scrollIntoView({ block: 'nearest' });
+        }
+    }
+});
