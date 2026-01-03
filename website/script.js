@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuToggle) {
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+            document.body.classList.toggle('no-scroll'); // Lock scroll
 
             // Optional: Animate hamburger icon
             const icon = menuToggle.querySelector('i');
@@ -26,12 +27,27 @@ document.addEventListener('DOMContentLoaded', () => {
         links.forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
+                document.body.classList.remove('no-scroll');
                 const icon = menuToggle.querySelector('i');
                 if (icon) {
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
                 }
             });
+        });
+        // Dropdown Toggle for Mobile
+        const dropdowns = document.querySelectorAll('.nav-item-dropdown');
+        dropdowns.forEach(drop => {
+            const trigger = drop.querySelector('.dropdown-trigger');
+            if (trigger) {
+                trigger.addEventListener('click', (e) => {
+                    // Only prevent default if window width is small (mobile)
+                    if (window.innerWidth <= 968) {
+                        e.preventDefault();
+                        drop.classList.toggle('active');
+                    }
+                });
+            }
         });
     }
 
