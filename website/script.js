@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Close menu when a link is clicked
-        const links = navLinks.querySelectorAll('a');
+        // Close menu when a link is clicked (excluding dropdown triggers)
+        const links = navLinks.querySelectorAll('a:not(.dropdown-trigger)');
         links.forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -88,6 +88,26 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(styleSheet);
 });
 
+/* Dynamic Active Link Highlighting */
+const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+const navItems = document.querySelectorAll('.nav-links a');
+
+navItems.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPath) {
+        link.classList.add('active');
+        // If it's inside a dropdown, highlight the parent trigger too
+        const parentDropdown = link.closest('.nav-item-dropdown');
+        if (parentDropdown) {
+            const trigger = parentDropdown.querySelector('.dropdown-trigger');
+            if (trigger) trigger.classList.add('active');
+            // Ensure dropdown is expanded on desktop if needed (optional, usually hover handled by CSS)
+        }
+    } else {
+        // Clean up hardcoded actives if any (except for specific cases if needed)
+        link.classList.remove('active');
+    }
+});
 
 /* Project Data removed in favor of static pages for reliability */
 
