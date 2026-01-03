@@ -1,0 +1,12 @@
+[build]
+  base = "website"
+  publish = "."
+  
+  # For static sites, we usually don't need a build command unless you have a build process.
+  # If 'website' is just HTML/CSS/JS:
+  # command = "" 
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

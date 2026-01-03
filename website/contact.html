@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Barry Shodeke - Senior Mobile Engineer.">
+    <title>Contact | Barry Shodeke</title>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📱</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <span class="bracket">&lt;</span>Barry<span class="slash">/</span>Shodeke<span
+                    class="bracket">&gt;</span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Start</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html" class="active btn-cta">Contact</a></li>
+            <li><a href="resume.pdf" class="btn-resume" target="_blank">Resume</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <main>
+        <section class="section">
+            <div class="container small-container">
+                <h1 class="page-title text-center">Get In <span class="highlight">Touch</span></h1>
+                <p class="section-subtitle text-center">I'm currently open to new opportunities. Whether you have a
+                    question or just want to say hi, I'll try my best to get back to you!</p>
+
+                <!-- Quick Contact Cards -->
+                <div class="contact-methods-grid">
+                    <!-- WhatsApp Card -->
+                    <a href="https://wa.me/2348125574822?text=Hi%20Barry,%20I'd%20like%20to%20discuss%20a%20project."
+                        target="_blank" class="contact-method-card whatsapp">
+                        <div class="icon-box">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>WhatsApp</h3>
+                        <p>Chat instantly</p>
+                        <span class="link-text">Message Now <i class="fas fa-arrow-right"></i></span>
+                    </a>
+
+                    <!-- Email Card -->
+                    <a href="mailto:shodekebarry@gmail.com" class="contact-method-card email">
+                        <div class="icon-box">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>shodekebarry@gmail.com</p>
+                        <span class="link-text">Send Email <i class="fas fa-arrow-right"></i></span>
+                    </a>
+
+                    <!-- Socials Card -->
+                    <div class="contact-method-card social">
+                        <div class="icon-box">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <h3>Socials</h3>
+                        <p>Connect with me</p>
+                        <div class="mini-social-links">
+                            <a href="https://github.com/hiimax" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/shodekebarry/" target="_blank"><i
+                                    class="fab fa-linkedin"></i></a>
+                            <a href="https://twitter.com/shodekebarry" target="_blank"><i
+                                    class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Styled Form -->
+                <div class="premium-form-container">
+                    <h2>Send a Message</h2>
+                    <form class="premium-form" action="mailto:shodekebarry@gmail.com" method="post"
+                        enctype="text/plain">
+                        <div class="input-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Your Name</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Your Email</label>
+                        </div>
+                        <div class="input-group">
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- WhatsApp Floating Bot -->
+    <a href="https://wa.me/2348125574822?text=Hi%20Barry,%20I%20saw%20your%20portfolio..." target="_blank"
+        class="whatsapp-float-bot">
+        <div class="notification-dot">1</div>
+        <i class="fab fa-whatsapp"></i>
+        <div class="bot-tooltip">Chat with me!</div>
+    </a>
+
+    <footer>
+        <p>Designed & Built by Barry Shodeke <br> <span class="sub-footer">© 2025 • Mobile First</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
