@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Project Details">
-    <title>Project Details | Barry Shodeke</title>
+    <meta name="description" content="FinTech Vault - Project Details">
+    <title>FinTech Vault | Barry Shodeke</title>
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📱</text></svg>">
     <link rel="stylesheet" href="style.css">
@@ -45,41 +45,42 @@
             <div class="container hero-grid">
                 <div class="hero-content">
                     <a href="projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
-                    <h1 id="p-title" class="project-title-large">Loading...</h1>
-                    <p id="p-tagline" class="project-tagline">...</p>
+                    <h1 class="project-title-large">FinTech Vault</h1>
+                    <p class="project-tagline">Next-gen security for digital assets.</p>
 
                     <div class="project-meta-grid">
                         <div class="meta-item">
                             <span class="label">Role</span>
-                            <span id="p-role" class="value">...</span>
+                            <span class="value">Senior iOS Engineer</span>
                         </div>
                         <div class="meta-item">
                             <span class="label">Timeline</span>
-                            <span id="p-timeline" class="value">...</span>
+                            <span class="value">2021 - 2022</span>
                         </div>
                         <div class="meta-item">
                             <span class="label">Stack</span>
-                            <div id="p-stack" class="stack-tags"></div>
+                            <div class="stack-tags">
+                                <span>SwiftUI</span>
+                                <span>Combine</span>
+                                <span>CryptoKit</span>
+                                <span>FaceID</span>
+                            </div>
                         </div>
                     </div>
 
                     <div class="project-actions">
-                        <a href="#" id="btn-apple" class="store-btn-large apple hidden">
+                        <a href="#" class="store-btn-large apple">
                             <i class="fab fa-apple"></i> Download on iOS
                         </a>
-                        <a href="#" id="btn-google" class="store-btn-large google hidden">
-                            <i class="fab fa-google-play"></i> Get on Android
-                        </a>
-                        <a href="#" id="btn-web" class="store-btn-large web hidden">
-                            <i class="fas fa-globe"></i> Visit Website
+                        <a href="#" class="code-link-large">
+                            <i class="fab fa-github"></i> View Code
                         </a>
                     </div>
                 </div>
                 <div class="hero-visual">
-                    <!-- Dynamic phone mockup or main graphic -->
                     <div class="phone-mockup-large">
-                        <div class="screen-content" id="p-hero-img">
-                            <!-- Image injected here -->
+                        <div class="screen-content"
+                            style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
                             <i class="fas fa-mobile-alt placeholder-icon"></i>
                         </div>
                     </div>
@@ -92,19 +93,17 @@
             <div class="container small-container">
                 <div class="detail-block">
                     <h2>The Challenge</h2>
-                    <p id="p-challenge">Loading description...</p>
-                </div>
-
-                <div class="detail-block">
-                    <h2>System Architecture</h2>
-                    <div id="p-architecture" class="architecture-container">
-                        <!-- Diagram injected here -->
-                    </div>
+                    <p>Building a fintech app requires military-grade security without compromising user experience. The
+                        client needed a way to visualize complex crypto portfolios alongside traditional banking data in
+                        real-time.</p>
                 </div>
 
                 <div class="detail-block">
                     <h2>My Solution & Role</h2>
-                    <p id="p-solution">Loading details...</p>
+                    <p>Leveraged <strong>SwiftUI</strong> for a highly responsive, animated interface. Implemented
+                        <strong>CryptoKit</strong> for on-device key storage and biometric authentication steps. Used
+                        <strong>Combine</strong> pipelines to merge WebSocket streams from crypto exchanges with REST
+                        API data from banking backends seamlessly.</p>
                 </div>
             </div>
         </section>
@@ -113,8 +112,9 @@
         <section class="section gallery-section">
             <div class="container">
                 <h2 class="section-heading-center">App Gallery</h2>
-                <div class="gallery-grid" id="p-gallery">
-                    <!-- Images injected here -->
+                <div class="gallery-grid">
+                    <div class="gallery-item" style="background: #16213e;"></div>
+                    <div class="gallery-item" style="background: #0f3460;"></div>
                 </div>
             </div>
         </section>
@@ -123,8 +123,8 @@
         <section class="next-project-footer">
             <div class="container">
                 <p>Next Project</p>
-                <a href="#" id="next-project-link">
-                    <h2 id="next-project-name">Next App title</h2>
+                <a href="project-healthtrack.html">
+                    <h2>HealthTrack Pro</h2>
                     <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
@@ -137,27 +137,6 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Simple In-Page Handler to load data (moved to script.js usually, but keeping logic close for simplicity first)
-        document.addEventListener('DOMContentLoaded', () => {
-            const params = new URLSearchParams(window.location.search);
-            const projectId = params.get('id');
-            console.log("Loading project:", projectId);
-
-            if (projectId && window.loadProjectData) {
-                try {
-                    window.loadProjectData(projectId);
-                } catch (e) {
-                    console.error("Error loading project data:", e);
-                    document.getElementById('p-title').innerText = "Error Loading Data";
-                }
-            } else {
-                console.error("Missing ID or loadProjectData function");
-                if (!window.loadProjectData) console.error("loadProjectData is undefined");
-                document.getElementById('p-title').innerText = "Project Not Found";
-            }
-        });
-    </script>
 </body>
 
 </html>

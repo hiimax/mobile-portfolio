@@ -508,6 +508,103 @@ a {
 
 
 
+/* --- Project Details & Architecture --- */
+.project-details-section {
+    padding: 4rem 0;
+    font-family: var(--font-heading);
+}
+
+.detail-block {
+    margin-bottom: 4rem;
+}
+
+.detail-block h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.detail-block p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Architecture Diagram */
+.architecture-container {
+    background: #0f0f16;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-top: 1.5rem;
+    overflow-x: auto;
+}
+
+.arch-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-width: 600px;
+    /* Ensure it scrolls on mobile */
+    margin-bottom: 1.5rem;
+}
+
+.arch-node {
+    background: #1c1c2e;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.arch-node i {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.arch-node span {
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.arch-node .sub-label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    margin-top: 0.3rem;
+}
+
+.arch-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    gap: 0.3rem;
+}
+
+.arch-arrow i {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.arch-legend {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
 /* Project Details Page */
 .project-hero {
     padding-top: 150px;
@@ -793,7 +890,17 @@ a {
     grid-row: span 2;
 }
 
+/* Utilities */
+.small-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 @media (max-width: 768px) {
+    .philosophy-grid {
+        grid-template-columns: 1fr;
+    }
+
     .photo-grid {
         grid-template-columns: 1fr;
         grid-auto-rows: 250px;
@@ -1523,6 +1630,49 @@ footer {
 
 .text-center {
     text-align: center;
+}
+
+/* --- Philosophy Section --- */
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.philosophy-card {
+    background: #13131f;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    transition: transform 0.3s, border-color 0.3s, background 0.3s;
+    height: 100%;
+}
+
+.philosophy-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    background: rgba(19, 19, 31, 0.8);
+}
+
+.philosophy-card h3 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.philosophy-card h3 i {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.philosophy-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 .contact-methods-grid {
