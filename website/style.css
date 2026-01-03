@@ -869,6 +869,31 @@ a {
         /* Ensure flex is active */
     }
 
+    .project-footer {
+        margin-top: 1.5rem;
+        /* Space between buttons and learn more */
+    }
+
+    .learn-more-link {
+        color: var(--accent);
+        text-decoration: none;
+        font-size: 0.95rem;
+        /* Slightly larger */
+        font-weight: 600;
+        /* Bolder */
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        /* margin-left: auto; Removed for left alignment */
+        transition: gap 0.3s;
+    }
+
+    .learn-more-link:hover {
+        gap: 0.8rem;
+        text-decoration: none;
+        /* No underline */
+    }
+
     .nav-links li {
         margin: 1.5rem 0;
     }
@@ -935,6 +960,13 @@ a {
     .phone-mockup-large {
         max-width: 250px;
     }
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 4rem;
 }
 
 .project-card {
