@@ -4,24 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sopdia Foods - Project Details">
-    <title>Sopdia Foods | Barry Shodeke</title>
+    <meta name="description" content="HGT - Project Details">
+    <title>HGT | Barry Shodeke</title>
 
     <!-- SEO & Open Graph -->
-    <meta property="og:title" content="Sopdia Foods | Shodeke Bamidele Samson">
-    <meta property="og:description"
-        content="Sopdia Food Delivery. Order fresh meals swiftly. Track deliveries seamlessly.">
+    <meta property="og:title" content="HGT | Shodeke Bamidele Samson">
+    <meta property="og:description" content="Explore a smarter way to digital life.">
     <!-- Placeholder image until user uploads -->
-    <meta property="og:image" content="assets/images/sopdiafoods/sopdia-1.jpg">
-    <meta property="og:url" content="https://shodeke.com/project-sopdiafoods.html">
+    <meta property="og:image" content="assets/images/hgt/hgt-1.png">
+    <meta property="og:url" content="https://shodeke.com/project-hgt.html">
     <meta property="og:type" content="article">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sopdia Foods | Shodeke Bamidele Samson">
-    <meta name="twitter:description"
-        content="Sopdia Food Delivery. Order fresh meals swiftly. Track deliveries seamlessly.">
-    <meta name="twitter:image" content="assets/images/sopdiafoods/sopdia-1.jpg">
+    <meta name="twitter:title" content="HGT | Shodeke Bamidele Samson">
+    <meta name="twitter:description" content="Explore a smarter way to digital life.">
+    <meta name="twitter:image" content="assets/images/hgt/hgt-1.png">
 
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📱</text></svg>">
@@ -77,9 +75,8 @@
             <div class="container hero-grid">
                 <div class="hero-content">
                     <a href="projects.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
-                    <h1 class="project-title-large">Sopdia Foods</h1>
-                    <p class="project-tagline">Sopdia Food Delivery. Order fresh meals swiftly. Track deliveries
-                        seamlessly.</p>
+                    <h1 class="project-title-large">HGT</h1>
+                    <p class="project-tagline">Explore a smarter way to digital life.</p>
 
                     <div class="project-meta-grid">
                         <div class="meta-item">
@@ -95,29 +92,31 @@
                             <div class="stack-tags">
                                 <span>Flutter</span>
                                 <span>Firebase</span>
-                                <span>Google Maps</span>
+                                <span>REST API</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="project-actions">
-                        <a href="https://apps.apple.com/us/app/sopdia-food/id6478449770" class="store-btn-large apple"
+                        <a href="https://apps.apple.com/us/app/hgt/id6738918442" class="store-btn-large apple"
                             target="_blank">
                             <i class="fab fa-apple"></i> Download on iOS
                         </a>
-                        <a href="https://play.google.com/store/apps/details?id=com.sopdia.customer&pcampaignid=web_share"
+                        <a href="https://play.google.com/store/apps/details?id=com.dev.dami.hgt&pcampaignid=web_share"
                             class="store-btn-large google" target="_blank">
                             <i class="fab fa-google-play"></i> Download on Android
                         </a>
-                        <a href="https://sopdia.com/" class="code-link-large" target="_blank">
+                        <!-- Placeholder for Website link -->
+                        <a href="#" class="code-link-large" target="_blank">
                             <i class="fas fa-globe"></i> Visit Website
                         </a>
                     </div>
                 </div>
+                <!-- Hero Visual -->
                 <div class="hero-visual">
                     <div class="phone-mockup-large">
                         <div class="screen-content"
-                            style="background: url('assets/images/sopdiafoods/sopdia-1.jpg') center/cover no-repeat;">
+                            style="background: url('assets/images/hgt/hgt.png') center/cover no-repeat;">
                         </div>
                     </div>
                 </div>
@@ -129,17 +128,17 @@
             <div class="container">
                 <div class="detail-block">
                     <h2>The Challenge</h2>
-                    <p>Welcome to Sopdia, your ultimate solution for hassle-free food delivery! Sopdia brings you a
-                        seamless experience, offering a diverse array of cuisines at your fingertips. Browse through our
-                        curated selection of restaurants, from local favorites to top-rated eateries, and discover an
-                        extensive menu catering to all tastes and dietary preferences.</p>
+                    <p>Users needed a simple, stress-free way to convert giftcards and cryptocurrency to Naira, as well
+                        as handle utility payments like airtime, data, and cable TV recharge. The goal was to build a
+                        secure and intuitive platform that consolidates these financial activities.</p>
                 </div>
 
                 <div class="detail-block">
                     <h2>System Architecture</h2>
-                    <p>Designed a robust architecture to handle real-time orders, location tracking, and secure
-                        payments, ensuring a seamless experience for users.</p>
+                    <p>Designed for security and speed, ensuring instant transaction processing and safe asset
+                        conversion.</p>
 
+                    <!-- Using standard architecture connection -->
                     <div class="architecture-container">
                         <div class="arch-diagram">
                             <div class="arch-node">
@@ -149,59 +148,44 @@
                             </div>
 
                             <div class="arch-arrow">
-                                <span>Orders</span>
+                                <span>Requests</span>
                                 <i class="fas fa-arrow-right"></i>
                             </div>
 
                             <div class="arch-node">
-                                <i class="fas fa-cloud"></i>
-                                <span>Firebase</span>
-                                <span class="sub-label">Backend</span>
+                                <i class="fas fa-server"></i>
+                                <span>Backend API</span>
+                                <span class="sub-label">Node.js</span>
                             </div>
 
                             <div class="arch-arrow">
-                                <span>Data</span>
+                                <span>Exchange</span>
                                 <i class="fas fa-arrow-right"></i>
                             </div>
 
                             <div class="arch-node">
-                                <i class="fas fa-map-marked-alt"></i>
-                                <span>Google Maps</span>
-                                <span class="sub-label">Location</span>
-                            </div>
-
-                            <div class="arch-arrow">
-                                <span>Payment</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </div>
-
-                            <div class="arch-node">
-                                <i class="fas fa-credit-card"></i>
-                                <span>Payment Gateway</span>
-                                <span class="sub-label">Secure</span>
+                                <i class="fab fa-bitcoin"></i>
+                                <span>Crypto API</span>
+                                <span class="sub-label">Third Party</span>
                             </div>
                         </div>
                         <div class="arch-legend">
-                            <i class="fas fa-info-circle"></i> On-Demand Food Delivery Architecture
+                            <i class="fas fa-info-circle"></i> Service Architecture
                         </div>
                     </div>
                 </div>
 
                 <div class="detail-block">
                     <h2>My Role & Solution</h2>
-                    <p>With Sopdia, ordering food is a breeze. Simply choose your desired dishes, customize your order,
-                        and enjoy swift delivery right to your doorstep. Our user-friendly interface allows for easy
-                        navigation, ensuring a convenient and enjoyable experience every time you use the app.</p>
-                    <p style="margin-top: 1rem;">Track your delivery in real-time and stay updated on the status of your
-                        order, giving you peace of mind and eliminating uncertainty. We prioritize efficiency and
-                        reliability, ensuring that your meals arrive fresh and on time.</p>
+                    <p>I developed the mobile application to provide a seamless financial experience. Focus was placed
+                        on transaction security, real-time updates, and a clean user interface for effortless
+                        navigation.</p>
+                    <p style="margin-top: 1rem;">Key features include:</p>
                     <ul
                         style="list-style: disc; margin-left: 1.5rem; margin-top: 1rem; color: var(--text-secondary); line-height: 1.8;">
-                        <li><strong>Diverse Cuisines:</strong> Extensive menu from local favorites to top-rated
-                            eateries.</li>
-                        <li><strong>Real-Time Tracking:</strong> Stay updated on your order status instantly.</li>
-                        <li><strong>Secure Payments:</strong> Multiple secure payment options for hustle-free
-                            transactions.</li>
+                        <li><strong>Conversion:</strong> Instant Giftcard and Crypto to Naira exchange.</li>
+                        <li><strong>Utilities:</strong> Easy payments for Airtime, Data, and Bills.</li>
+                        <li><strong>Security:</strong> Robust encryption for all transactions.</li>
                     </ul>
                 </div>
 
@@ -209,38 +193,38 @@
 
                 <div class="skills-grid">
                     <div class="skill-category">
-                        <h3><i class="fas fa-utensils"></i> Easy Ordering</h3>
+                        <h3><i class="fas fa-exchange-alt"></i> Asset Exchange</h3>
                         <ul class="skill-list">
-                            <li>Browse Menus</li>
-                            <li>Customize Orders</li>
-                            <li>Quick Checkout</li>
+                            <li>Giftcards to Cash</li>
+                            <li>Crypto to Naira</li>
+                            <li>Best Rates</li>
                         </ul>
                     </div>
 
                     <div class="skill-category">
-                        <h3><i class="fas fa-map-marker-alt"></i> Location Based</h3>
+                        <h3><i class="fas fa-receipt"></i> Bill Payment</h3>
                         <ul class="skill-list">
-                            <li>Address Pinning</li>
-                            <li>City Selection</li>
-                            <li>Delivery Tracking</li>
+                            <li>Airtime Recharge</li>
+                            <li>Data Bundles</li>
+                            <li>Cable TV</li>
                         </ul>
                     </div>
 
                     <div class="skill-category">
-                        <h3><i class="fas fa-shield-alt"></i> Secure</h3>
+                        <h3><i class="fas fa-wallet"></i> Wallet System</h3>
                         <ul class="skill-list">
-                            <li>Secure Payments</li>
-                            <li>User Authentication</li>
-                            <li>Data Privacy</li>
+                            <li>Instant Funding</li>
+                            <li>Easy Withdrawals</li>
+                            <li>History Tracking</li>
                         </ul>
                     </div>
 
                     <div class="skill-category">
-                        <h3><i class="fas fa-truck"></i> Reliable</h3>
+                        <h3><i class="fas fa-lock"></i> Secure & Safe</h3>
                         <ul class="skill-list">
-                            <li>Order Status</li>
-                            <li>Order History</li>
-                            <li>Support Chat</li>
+                            <li>2FA Protection</li>
+                            <li>Encrypted Data</li>
+                            <li>Support 24/7</li>
                         </ul>
                     </div>
                 </div>
@@ -252,17 +236,13 @@
             <div class="container">
                 <h2 class="section-heading-center">App Gallery</h2>
                 <div class="gallery-grid">
-                    <div class="gallery-item"
-                        style="background: url('assets/images/sopdiafoods/sopdia-1.jpg') center/cover;">
+                    <div class="gallery-item" style="background: url('assets/images/hgt/hgt-1.png') center/cover;">
                     </div>
-                    <div class="gallery-item"
-                        style="background: url('assets/images/sopdiafoods/sopdia-2.jpg') center/cover;">
+                    <div class="gallery-item" style="background: url('assets/images/hgt/hgt-2.png') center/cover;">
                     </div>
-                    <div class="gallery-item"
-                        style="background: url('assets/images/sopdiafoods/sopdia-3.jpg') center/cover;">
+                    <div class="gallery-item" style="background: url('assets/images/hgt/hgt-3.png') center/cover;">
                     </div>
-                    <div class="gallery-item"
-                        style="background: url('assets/images/sopdiafoods/sopdia-4.jpg') center/cover;">
+                    <div class="gallery-item" style="background: url('assets/images/hgt/hgt-4.png') center/cover;">
                     </div>
                 </div>
             </div>

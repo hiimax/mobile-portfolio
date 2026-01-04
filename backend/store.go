@@ -58,7 +58,7 @@ func seedData() {
 		Title:     "Civic24",
 		Tagline:   "Bridging the gap between citizens and public services.",
 		Role:      "Founder & Lead Engineer",
-		Timeline:  "Jan 2023 - Present",
+		Timeline:  "Jan Active",
 		Stack:     []string{"Flutter", "Dart", "Firebase", "Node.js"},
 		HeroColor: "linear-gradient(135deg, #13131f 0%, #1c1c2e 100%)",
 		VideoURL:  "https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",

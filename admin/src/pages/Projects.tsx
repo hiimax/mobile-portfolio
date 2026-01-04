@@ -19,7 +19,7 @@ const projects: Project[] = [
         title: "E-Commerce Platform",
         tagline: "A modern shopping experience",
         role: "Full Stack Developer",
-        timeline: "2023 - Present",
+        timeline: "Active",
         stack: ["React", "Node.js", "PostgreSQL"],
         heroColor: "#3b82f6",
         videoUrl: "",
